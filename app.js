@@ -24,11 +24,11 @@ app.get('/', (req, res) => res.send({ info: 'Journal API'}))
 
 
 
-// Prefix router
-app.use('/entries', entryRoutes)
+
 // app.use('/categories', categoryRoutes)
 app.get('/categories', async (req, res) => res.send(await CategoryModel.find()))
-
+// Prefix router
+app.use('/entries', entryRoutes)
 
 // Start server and listen
 // app.listen(4001)
